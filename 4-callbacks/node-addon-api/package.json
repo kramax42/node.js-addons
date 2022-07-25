@@ -1,0 +1,15 @@
+{
+  "name": "callbacks",
+  "version": "0.0.0",
+  "description": "Node.js addon example with callback",
+  "main": "addon.js",
+  "private": true,
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "^1.0.0"
+  }
+}
