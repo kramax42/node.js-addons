@@ -1,0 +1,3 @@
+- https://morioh.com/p/e1a6f79af449
+- https://www.adaltas.com/en/2018/12/12/native-modules-node-js-n-api/
+- https://github.com/OrsoEric/2020-01-18-Test-NODEJS-Return-Class
