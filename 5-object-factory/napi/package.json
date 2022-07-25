@@ -1,0 +1,14 @@
+{
+  "name": "object_factory",
+  "version": "0.0.0",
+  "description": "Node.js Addons Example #4",
+  "main": "addon.js",
+  "private": true,
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "~1.2.1"
+  }
+}
