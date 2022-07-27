@@ -1,0 +1,14 @@
+{
+  "name": "factory_wrap",
+  "version": "0.0.0",
+  "description": "Node.js napi addon example #10",
+  "main": "addon.js",
+  "private": true,
+  "gypfile": true,
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1"
+  }
+}
