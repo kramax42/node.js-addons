@@ -1,0 +1,18 @@
+{
+  "name": "factory_wrap",
+  "version": "0.0.0",
+  "description": "Node.js addons example #10",
+  "main": "addon.js",
+  "private": true,
+  "gypfile": true,
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "engines": {
+    "node": "~10 >=10.20 || >=12.17"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "^3.0.0"
+  }
+}
