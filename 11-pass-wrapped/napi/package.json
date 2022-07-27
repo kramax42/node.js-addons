@@ -1,0 +1,14 @@
+{
+  "name": "pass_wrapped",
+  "version": "0.0.0",
+  "description": "Node.js addons example #11",
+  "main": "addon.js",
+  "private": true,
+  "gypfile": true,
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1"
+  }
+}
