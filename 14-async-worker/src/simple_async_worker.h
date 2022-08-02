@@ -14,6 +14,7 @@ class SimpleAsyncWorker : public Napi::AsyncWorker {
 
  private:
   int run_time;
+  int counter = 0;
 };
 
 #endif
