@@ -3,7 +3,7 @@
 Napi::Value RunSimpleAsyncWorker(const Napi::CallbackInfo& info) {
   int run_time = info[0].As<Napi::Number>();
   Napi::Function callback = info[1].As<Napi::Function>();
-  SimpleAsyncWorker* asyncWorker = new SimpleAsyncWorker(callback, run_time);
+  SimpleAsyncWorker* asyncWorker = new SimpleAsyncWorker(run_time, callback);
   asyncWorker->Queue();
   std::string msg =
       "SimpleAsyncWorker for " + std::to_string(run_time) + " seconds queued.";

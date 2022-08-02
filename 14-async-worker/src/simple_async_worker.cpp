@@ -2,7 +2,7 @@
 #include <chrono>
 #include <thread>
 
-SimpleAsyncWorker::SimpleAsyncWorker(Napi::Function& callback, int run_time)
+SimpleAsyncWorker::SimpleAsyncWorker(int run_time, Napi::Function& callback)
     : AsyncWorker(callback), run_time(run_time){};
 
 void SimpleAsyncWorker::Execute() {

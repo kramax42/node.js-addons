@@ -6,7 +6,7 @@
 
 class SimpleAsyncWorker : public Napi::AsyncWorker {
  public:
-  SimpleAsyncWorker(Napi::Function& callback, int run_time);
+  SimpleAsyncWorker(int run_time, Napi::Function& callback);
   virtual ~SimpleAsyncWorker(){};
 
   void Execute();
