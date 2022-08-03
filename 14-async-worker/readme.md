@@ -1,1 +1,0 @@
-- https://nodejs.github.io/node-addon-examples/special-topics/asyncworker
