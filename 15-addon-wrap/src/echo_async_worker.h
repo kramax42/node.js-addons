@@ -7,7 +7,7 @@
 
 class EchoWorker : public Napi::AsyncWorker {
  public:
-  EchoWorker(Napi::Function& callback, std::string& echo);
+  EchoWorker(std::string& echo, Napi::Function& callback);
   virtual ~EchoWorker(){};
 
   void Execute();

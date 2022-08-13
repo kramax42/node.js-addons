@@ -7,14 +7,14 @@
 
 class IncrementWorker : public Napi::AsyncWorker {
  public:
-  IncrementWorker(Napi::Function& callback, std::string& echo);
+  IncrementWorker(uint32_t num, Napi::Function& callback);
   virtual ~IncrementWorker(){};
 
   void Execute();
   void OnOK();
 
  private:
-  std::string echo;
+  uint32_t num;
 };
 
 #endif

@@ -1,8 +1,8 @@
 #include "echo_async_worker.h"
 #include <iostream>
 
-EchoWorker::EchoWorker(Napi::Function& callback, std::string& echo)
-    : Napi::AsyncWorker(callback), echo(echo) {}
+EchoWorker::EchoWorker(std::string& echo, Napi::Function& callback)
+    : Napi::AsyncWorker(callback), echo(echo)  {}
 
 void EchoWorker::Execute() {
   std::this_thread::sleep_for(std::chrono::seconds(1));

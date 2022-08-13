@@ -26,3 +26,6 @@ exampleAddon.echoAsyncWorker('7', callback);
 exampleAddon.echoAsyncWorker('8', callback);
 
 console.log('* END ECHO ASYNC WORKER *');
+
+const num = 99
+exampleAddon.incrementAsyncWorker(num, (result) => console.log(`${num} + 1 = ${result}`));

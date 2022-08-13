@@ -1,5 +1,6 @@
 #include <napi.h>
 #include "echo_async_worker.h"
+#include "increment_async_worker.h"
 
 class ExampleAddon : public Napi::Addon<ExampleAddon> {
  public:
@@ -10,6 +11,8 @@ class ExampleAddon : public Napi::Addon<ExampleAddon> {
         exports,
         {InstanceMethod("increment", &ExampleAddon::Increment),
          InstanceMethod("echoAsyncWorker", &ExampleAddon::EchoAsyncWorker),
+         InstanceMethod("incrementAsyncWorker",
+                        &ExampleAddon::IncrementAsyncWorker),
 
          // We can also attach plain objects to `exports`, and instance methods
          // as properties of those sub-objects.
@@ -41,7 +44,16 @@ class ExampleAddon : public Napi::Addon<ExampleAddon> {
     // You need to validate the arguments here.
     std::string in = info[0].As<Napi::String>();
     Napi::Function cb = info[1].As<Napi::Function>();
-    EchoWorker* wk = new EchoWorker(cb, in);
+    EchoWorker* wk = new EchoWorker(in, cb);
+    wk->Queue();
+    return info.Env().Undefined();
+  }
+
+  Napi::Value IncrementAsyncWorker(const Napi::CallbackInfo& info) {
+    // You need to validate the arguments here.
+    uint32_t in = info[0].As<Napi::Number>();
+    Napi::Function cb = info[1].As<Napi::Function>();
+    IncrementWorker* wk = new IncrementWorker(in, cb);
     wk->Queue();
     return info.Env().Undefined();
   }
