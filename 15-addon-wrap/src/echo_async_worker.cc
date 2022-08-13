@@ -1,8 +1,6 @@
 #include "echo_async_worker.h"
 #include <iostream>
 
-// using namespace Napi;
-
 EchoWorker::EchoWorker(Napi::Function& callback, std::string& echo)
     : Napi::AsyncWorker(callback), echo(echo) {}
 
@@ -12,6 +10,5 @@ void EchoWorker::Execute() {
 
 void EchoWorker::OnOK() {
   Napi::HandleScope scope(Env());
-
-    Callback().Call({Napi::String::New(Env(), echo)});
+  Callback().Call({Napi::String::New(Env(), echo)});
 };
