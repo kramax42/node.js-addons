@@ -13,6 +13,7 @@ class ExampleAddon : public Napi::Addon<ExampleAddon> {
          InstanceMethod("echoAsyncWorker", &ExampleAddon::EchoAsyncWorker),
          InstanceMethod("incrementAsyncWorker",
                         &ExampleAddon::IncrementAsyncWorker),
+         InstanceMethod("getValue", &ExampleAddon::GetValue),
 
          // We can also attach plain objects to `exports`, and instance methods
          // as properties of those sub-objects.
@@ -56,6 +57,10 @@ class ExampleAddon : public Napi::Addon<ExampleAddon> {
     IncrementWorker* wk = new IncrementWorker(in, cb);
     wk->Queue();
     return info.Env().Undefined();
+  }
+
+  Napi::Value GetValue(const Napi::CallbackInfo& info) {
+    return Napi::Number::New(info.Env(), this->value);
   }
 
   // Data stored in these variables is unique to each instance of the add-on.

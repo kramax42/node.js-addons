@@ -5,7 +5,7 @@ IncrementWorker::IncrementWorker(uint32_t num, Napi::Function& callback)
     : Napi::AsyncWorker(callback), num(num) {}
 
 void IncrementWorker::Execute() {
-  std::this_thread::sleep_for(std::chrono::seconds(2));
+  std::this_thread::sleep_for(std::chrono::seconds(1));
 };
 
 void IncrementWorker::OnOK() {
