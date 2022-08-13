@@ -12,6 +12,7 @@ class MyObject : public Napi::ObjectWrap<MyObject> {
   Napi::Value GetValue(const Napi::CallbackInfo& info);
   Napi::Value PlusOne(const Napi::CallbackInfo& info);
   Napi::Value Multiply(const Napi::CallbackInfo& info);
+  // Napi::Value CreateNewItem(const Napi::CallbackInfo& info);
 
   double value;
 };

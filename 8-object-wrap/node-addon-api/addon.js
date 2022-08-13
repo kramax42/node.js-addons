@@ -1,6 +1,6 @@
-let addon = require('bindings')('addon');
+let { MyObject } = require('bindings')('addon');
 
-let obj = new addon.MyObject(10);
+let obj = new MyObject(10);
 console.log(obj.plusOne()); // 11
 console.log(obj.plusOne()); // 12
 console.log(obj.plusOne()); // 13
