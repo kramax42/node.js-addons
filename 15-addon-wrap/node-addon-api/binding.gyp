@@ -4,7 +4,7 @@
       "target_name": "addon",
       "cflags!": [ "-fno-exceptions" ],
       "cflags_cc!": [ "-fno-exceptions" ],
-      "sources": [ "src/addon.cc" ],
+      "sources": [ "src/addon.cc", "src/echo_async_worker.cc", ],
       "include_dirs": [
         "<!@(node -p \"require('node-addon-api').include\")"
       ],
