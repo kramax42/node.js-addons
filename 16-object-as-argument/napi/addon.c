@@ -24,19 +24,6 @@ static napi_value SumAllProps(napi_env env, napi_callback_info info) {
     return NULL;
   }
 
-  // napi_valuetype valuetype0;
-  // status = napi_typeof(env, args[0], &valuetype0);
-  // assert(status == napi_ok);
-
-  // napi_valuetype valuetype1;
-  // status = napi_typeof(env, args[1], &valuetype1);
-  // assert(status == napi_ok);
-
-  // if (valuetype0 != napi_number || valuetype1 != napi_number) {
-  //   napi_throw_type_error(env, NULL, "Wrong arguments");
-  //   return NULL;
-  // }
-
   // Transform function argument to JS-like object.
   napi_value arg;
   status = napi_coerce_to_object(env, args[0], &arg);
